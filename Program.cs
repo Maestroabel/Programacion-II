@@ -1,29 +1,35 @@
 ﻿using System;
 
-namespace Programa_4
+namespace Programa_3
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int A = 1, B = 0;
-            double C = 0;
+            float A = 1;
+            float[] B = new float[999999];
 
             for (int i = 0; A > 0; i++)
             {
                 try
                 {
                     A = int.Parse(Console.ReadLine());
-                    B = B + A;
-                    C++;
+                    B[i] = A * A;
                 }
                 catch (Exception)
                 {
-                    C = B / C;
-                    Console.WriteLine(C);
+                    for (int f = 0; f < B.Length; f++)
+                    {
+                        if (B[f] == 0)
+                        {
+                            break;
+                        }
+                        Console.WriteLine(B[f]);
+                    }                  
                     break;
-                }
+                }              
             }
+            Console.ReadLine();
         }
     }
 }
